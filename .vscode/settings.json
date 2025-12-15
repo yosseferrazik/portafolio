@@ -1,0 +1,29 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "node_modules": true,
+    "README.md": true,
+    "package-lock.json": true,
+    "jsconfig.json": true,
+    "eslint.config.mjs": true,
+    ".gitignore": true,
+    "src/app/section/home": true,
+    ".next": true,
+    ".vscode": true
+  },
+  "hide-files.files": [
+    "node_modules",
+    "README.md",
+    "package-lock.json",
+    "jsconfig.json",
+    "eslint.config.mjs",
+    ".gitignore",
+    "src/app/section/home",
+    ".next",
+    ".vscode"
+  ]
+}
