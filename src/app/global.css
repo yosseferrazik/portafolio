@@ -22,11 +22,6 @@ main {
   flex-direction: column;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 button,
 input,
 textarea,
@@ -55,6 +50,19 @@ table {
   border-collapse: collapse;
 }
 
+section h2 {
+  background: var(--color-gray-800);
+  padding: 0.5rem 1rem;
+  border-radius: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-gray-700);
+  width: fit-content;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -70,8 +78,25 @@ table {
   --color-gray-500: #8f96a3;
   --color-gray-600: #5e636e;
   --color-gray-700: #2f3237;
+  --color-gray-750: #232528;
   --color-gray-800: #1d1e20;
   --color-gray-900: #111213;
+  --color-gray-1000: #0a0a0b;
+
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-200: #c7d2ff;
+  --color-indigo-300: #a4b3ff;
+  --color-indigo-400: #7d87ff;
+  --color-indigo-500: #625fff;
+  --color-indigo-600: #4f39f6;
+  --color-indigo-700: #432dd7;
+
+  --color-pink-100: #fce7f3;
+  --color-pink-400: #fb64b6;
+  --color-pink-500: #f6339a;
+  --color-pink-600: #e30076;
+  --color-pink-900: #861043;
+  --color-rose-700: #c20039;
 
   --transition: 0.2s ease;
 }
@@ -85,6 +110,7 @@ a {
   cursor: pointer;
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
+  text-decoration: none;
   color: var(--color-gray-500);
 }
 
@@ -106,7 +132,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--color-gray-600);
+  background-color: var(--color-gray-750);
 }
 
 .hidden {

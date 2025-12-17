@@ -30,7 +30,11 @@
   align-items: center;
   gap: 8px;
   text-align: center;
-  white-space: nowrap; /* no parte los textos en móvil */
+  white-space: nowrap; 
+}
+
+.center a:first-child {
+  color: #f73799;
 }
 
 .left {
