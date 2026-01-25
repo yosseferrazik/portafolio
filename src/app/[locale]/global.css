@@ -64,6 +64,7 @@ table {
   --color-gray-400: #c2c9d6;
   --color-gray-500: #98a0ae;
   --color-gray-600: #5e636e;
+  --color-gray-650: #44474e;
   --color-gray-700: #2f3237;
   --color-gray-750: #232528;
   --color-gray-800: #1d1e20;
@@ -118,10 +119,12 @@ button.button {
   color: var(--color-gray-100);
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
+  border: 2px solid var(--color-gray-650);
 }
 
 button.button:hover {
   background-color: var(--color-gray-750);
+  border: 2px solid var(--color-gray-700);
 }
 
 .content {

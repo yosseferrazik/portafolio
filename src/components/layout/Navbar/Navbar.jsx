@@ -19,6 +19,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
+      <hr />
       {navItems.map(({ href, label, icon: Icon }) => {
         const active = pathname === href;
 
@@ -46,6 +47,7 @@ export default function Navbar() {
           </Link>
         );
       })}
+      <hr />
     </nav>
   );
 }
