@@ -3,9 +3,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
-import "@/app/global.css";
-
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar/Navbar";
+import LanguageSwitcher from "@/components/intl/LanguageSwitcher/LanguageSwitcher";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -21,11 +20,16 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <main>
+            <div className={`optionContainer`}>
+              <LanguageSwitcher />
+            </div>
+            <section className={`content`}>{children}</section>
+          </main>
           <Navbar />
-          {children}
         </NextIntlClientProvider>
       </body>
     </html>

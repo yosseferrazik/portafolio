@@ -9,17 +9,24 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.5;
   background-color: var(--color-gray-900);
-  color: var(--color-gray-300);
+  color: var(--color-gray-400);
 }
 
 main {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 button,
@@ -50,32 +57,12 @@ table {
   border-collapse: collapse;
 }
 
-section h2 {
-  background: var(--color-gray-800);
-  padding: 0.5rem 1rem;
-  border-radius: 1.2rem;
-  display: flex;
-  gap: 1rem;
-  font-size: 1.1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-  border: 1px solid var(--color-gray-700);
-  width: fit-content;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 :root {
   --color-gray-100: #f8f9fc;
   --color-gray-200: #f1f3f9;
   --color-gray-300: #dee3ed;
   --color-gray-400: #c2c9d6;
-  --color-gray-500: #8f96a3;
+  --color-gray-500: #98a0ae;
   --color-gray-600: #5e636e;
   --color-gray-700: #2f3237;
   --color-gray-750: #232528;
@@ -106,7 +93,9 @@ a {
   transition: var(--transition);
 }
 
-a {
+a.link {
+  width: 100%;
+  text-align: center;
   cursor: pointer;
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
@@ -114,25 +103,52 @@ a {
   color: var(--color-gray-500);
 }
 
-a:hover {
+a.link:hover {
   background-color: var(--color-gray-700);
   color: var(--color-gray-100);
   opacity: 1;
 }
 
-button {
-  cursor: pointer;
+button.button {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   background-color: var(--color-gray-700);
   color: var(--color-gray-100);
   padding: 0.4rem 0.5rem;
   border-radius: 4px;
 }
 
-button:hover {
+button.button:hover {
   background-color: var(--color-gray-750);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.optionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 2rem;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-right: 80px;
+    padding-bottom: 16px;
+  }
+
+  .optionContainer {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .hidden {

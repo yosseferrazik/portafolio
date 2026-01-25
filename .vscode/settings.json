@@ -22,7 +22,6 @@
     "jsconfig.json",
     "eslint.config.mjs",
     ".gitignore",
-    "src/app/section/home",
     ".next",
     ".vscode"
   ]

@@ -1,125 +1,70 @@
-.heroContent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 960px;
-  width: 100%;
-  background: var(--color-gray-800);
-  border: 1px solid var(--color-gray-700);
-
-  padding: 2rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.heroText,
-.heroImage {
-  flex: 1;
+.hero {
   display: flex;
   flex-direction: column;
+}
+
+.hero h1 {
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-right: auto;
 
-  margin: 1rem;
-}
-
-.heroText h1 {
-  text-align: right;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--color-gray-400);
 }
 
-.heroText p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.hero p {
+  max-width: 540px;
   line-height: 1.6;
+  color: var(--color-gray-500);
 }
 
 .socialLinks {
-  flex-basis: 100%;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.socialLinks button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-}
-.hero img {
-  max-width: 250px;
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  border-radius: 8px;
+  gap: 16px;
+  margin-top: 24px;
 }
 
-.cvButton {
-  background: var(--color-indigo-600);
-}
-.cvButton:hover {
-  background: var(--color-indigo-700);
-}
-
-.githubButton {
-  background: var(--color-gray-900);
-}
-
-.githubButton:hover {
-  background: var(--color-gray-1000);
+.jobStatus {
+  width: fit-content;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #3d763d;
+  background: rgba(84, 255, 46, 0.9);
+  box-shadow: 0 0 20px rgba(84, 255, 46, 0.8);
 }
 
-.aboutContent {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width: 960px;
-  width: 100%;
-  padding: 2rem;
-  gap: 1.5rem;
-}
+@media (max-width: 767px) {
+  .hero {
+    margin-top: 10vh;
+    margin-left: 5vw;
+    width: 90vw;
+  }
 
-.skillsContent {
-  display: flex;
-  flex-direction: column;
-  max-width: 960px;
-  width: 100%;
-  padding: 2rem;
-  gap: 1.5rem;
-}
-
-.skillCardContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  width: 100%;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .heroContent {
+  .hero h1 {
     flex-direction: column;
-    align-items: center;
-  }
-  .heroText,
-  .heroImage {
-    align-items: center;
-    text-align: center;
-  }
-  .heroText h1 {
-    text-align: center;
-  }
-  .heroText p {
-    font-size: 1rem;
-  }
-  .socialLinks {
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.4rem;
   }
 }
 
-@media (max-width: 420px) {
-  .hero img {
-    max-width: 300px;
+@media (min-width: 768px) {
+  .hero {
+    margin-top: 15vh;
+    margin-left: 10vw;
+    width: 80vw;
+  }
+
+  .hero h1 {
+    flex-direction: row;
+  }
+
+  .jobStatus {
+    font-size: 0.875rem;
   }
 }
