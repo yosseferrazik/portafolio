@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import styles from "./page.module.css";
-import "./global.css";
 import { Github, Email, Linkedin } from "@/components/icons";
 
 export default function HomePage() {

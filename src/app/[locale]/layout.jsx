@@ -3,6 +3,8 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
+import "./global.css";
+
 import Navbar from "@/components/layout/Navbar/Navbar";
 import LanguageSwitcher from "@/components/intl/LanguageSwitcher/LanguageSwitcher";
 

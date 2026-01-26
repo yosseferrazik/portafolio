@@ -5,11 +5,12 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import styles from "./Navbar.module.css";
 
-import { At, Home, User, Work } from "@/components/icons";
+import { At, Home, Timeline, User, Work } from "@/components/icons";
 
 const navItems = [
   { href: "/", label: "Inicio", icon: Home },
   { href: "/about", label: "Sobre mí", icon: User },
+  { href: "/experience", label: "Experiencia", icon: Timeline },
   { href: "/projects", label: "Proyectos", icon: Work },
   { href: "/contact", label: "Contacto", icon: At },
 ];
@@ -19,7 +20,6 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <hr />
       {navItems.map(({ href, label, icon: Icon }) => {
         const active = pathname === href;
 
@@ -47,7 +47,6 @@ export default function Navbar() {
           </Link>
         );
       })}
-      <hr />
     </nav>
   );
 }

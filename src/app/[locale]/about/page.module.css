@@ -1,9 +1,9 @@
-.hero {
+.about {
   display: flex;
   flex-direction: column;
 }
 
-.hero h1 {
+.about h1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,39 +14,20 @@
   font-weight: 700;
   color: var(--color-gray-400);
 }
-
-.hero p {
+.about p {
   max-width: 540px;
   line-height: 1.6;
   color: var(--color-gray-500);
 }
 
-.socialLinks {
-  display: flex;
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.jobStatus {
-  width: fit-content;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1;
-  color: #3d763d;
-  background: rgba(84, 255, 46, 0.9);
-  box-shadow: 0 0 20px rgba(84, 255, 46, 0.8);
-}
-
 @media (max-width: 767px) {
-  .hero {
+  .about {
     margin-top: 10vh;
     margin-inline: auto;
     width: 90vw;
   }
 
-  .hero h1 {
+  .about h1 {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
@@ -54,13 +35,13 @@
 }
 
 @media (min-width: 768px) {
-  .hero {
+  .about {
     margin-top: 15vh;
     margin-inline: auto;
     width: 60vw;
   }
 
-  .hero h1 {
+  .about h1 {
     flex-direction: row;
   }
 

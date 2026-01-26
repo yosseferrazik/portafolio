@@ -7,14 +7,14 @@
   display: flex;
   align-items: center;
 
-  background: var(--color-gray-900);
-  border: 2px solid var(--color-gray-800);
+  background: transparent;
+  border: 2px solid var(--color-gray-700);
   border-radius: 8px;
 
   padding: 10px 14px;
   min-width: 160px;
   width: 100%;
-  
+
   gap: 10px;
   text-align: left;
 
@@ -29,8 +29,8 @@
   list-style: none;
   padding: 4px;
 
-  background: var(--color-gray-900);
-  border: 2px solid var(--color-gray-800);
+  background: var(--color-gray-800);
+  border: 2px solid var(--color-gray-700);
   border-radius: 8px;
   min-width: 160px;
 }
@@ -51,11 +51,11 @@
 }
 
 .option:hover {
-  background: var(--color-gray-700);
+  background: var(--color-gray-800);
 }
 
 .active {
-  background: var(--color-gray-800);
+  background: var(--color-gray-700);
 }
 
 .text {
