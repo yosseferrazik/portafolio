@@ -1,4 +1,5 @@
 "use client";
+
 import { useTranslations } from "next-intl";
 import styles from "./page.module.css";
 import { Github, Email, Linkedin } from "@/components/icons";
@@ -9,6 +10,8 @@ const pageVariants = {
   animate: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: 50 },
 };
+
+
 
 export default function Home() {
   const t = useTranslations("Home");

@@ -11,7 +11,33 @@ import { AnimatePresence } from "framer-motion";
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
+export const metadata = {
+  title: "Yossef Errazik | Desarrollador Web & Portfolio",
+  description:
+    "Portfolio personal de Yossef Errazik, desarrollador web especializado en React, Next.js y diseño moderno.",
+  keywords: [
+    "Yossef Errazik",
+    "desarrollador web",
+    "frontend developer",
+    "backend developer",
+    "Next.js",
+    "portfolio",
+  ],
+  authors: [{ name: "Yossef Errazik" }],
+  creator: "Yossef Errazik",
+  openGraph: {
+    title: "Yossef Errazik | Desarrollador Web",
+    description: "Portfolio personal con proyectos, experiencia y contacto.",
+    url: "https://yosseferrazik.com",
+    siteName: "Yossef Errazik",
+    locale: "es_ES",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
 
