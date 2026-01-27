@@ -1,6 +1,15 @@
+"use client";
 import React from "react";
 import styles from "./page.module.css";
 import { ReactIcon } from "@/components/icons";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+const pageVariants = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 },
+};
 const Experience = () => {
   const timelineItems = [
     {
@@ -29,7 +38,13 @@ const Experience = () => {
     },
   ];
   return (
-    <div className={styles.experience}>
+    <motion.div
+      className={styles.experience}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <h1>Experience</h1>
       <br />
       <h4>Primary stack</h4>
@@ -63,7 +78,7 @@ const Experience = () => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

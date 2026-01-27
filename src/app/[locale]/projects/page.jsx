@@ -1,11 +1,25 @@
+"use client";
 import React from "react";
 
 import styles from "./page.module.css";
 import { ArrowRight, Github, HyperLink } from "@/components/icons";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
+const pageVariants = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 },
+};
 const Projects = () => {
   return (
-    <div className={styles.projects}>
+    <motion.div
+      className={styles.projects}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <h1>Projects</h1>
       <p>Here are some projects</p>
       <div className={styles.projectsContainer}>
@@ -65,7 +79,7 @@ const Projects = () => {
         </article>
         <button className="button">Hola</button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

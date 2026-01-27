@@ -1,6 +1,8 @@
 .wrapper {
-  position: relative;
+  position: fixed;
   display: inline-block;
+  top: 20px;
+  left: 20px;
 }
 
 .trigger {
@@ -9,6 +11,8 @@
 
   background: transparent;
   border: 2px solid var(--color-gray-700);
+  background: var(--color-gray-800);
+
   border-radius: 8px;
 
   padding: 10px 14px;

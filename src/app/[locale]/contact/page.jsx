@@ -1,11 +1,25 @@
+"use client";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 import styles from "./page.module.css";
 import { Mail } from "@/components/icons";
+import { motion } from "framer-motion";
 
+const pageVariants = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 },
+};
 const Contact = () => {
   return (
-    <div className={styles.contact}>
+    <motion.div
+      className={styles.contact}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <h1>Get in Touch</h1>
       <p>
         I'm currently available for freelance projects and consulting
@@ -19,7 +33,7 @@ const Contact = () => {
           &nbsp;Email me
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

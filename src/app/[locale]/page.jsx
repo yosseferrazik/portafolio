@@ -1,38 +1,56 @@
+"use client";
 import { useTranslations } from "next-intl";
 import styles from "./page.module.css";
 import { Github, Email, Linkedin } from "@/components/icons";
+import { motion } from "framer-motion";
 
-export default function HomePage() {
+const pageVariants = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 },
+};
+
+export default function Home() {
   const t = useTranslations("Home");
 
   return (
-    <div className={`${styles.hero}`}>
-      <h1>
-        Yossef Errazik
-        <span className={styles.jobStatus}>𒊹 Disponible para trabajar</span>
-      </h1>
-      <br />
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat
-      </p>
-      <br />
-      <div className={`${styles.socialLinks}`}>
-        <button className={`button `}>
-          <Github />
-          &nbsp;GitHub
-        </button>
-        <button className={`button `}>
-          <Linkedin />
-          &nbsp;Linkedin
-        </button>
-        <button className={`button `}>
-          <Email />
-          &nbsp;Email
-        </button>
+    <motion.div
+      className={`${styles.hero}`}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <div className={styles.heroContent}>
+        <h1>
+          Yossef Errazik
+          <span className={styles.jobStatus}>{t("hero.jobStatus")}</span>
+        </h1>
+        <br />
+        <p>{t("hero.description")}</p>
+        <br />
+        <div className={`${styles.socialLinks}`}>
+          <button className={`button `}>
+            <Github />
+            &nbsp;GitHub
+          </button>
+          <button className={`button `}>
+            <Linkedin />
+            &nbsp;Linkedin
+          </button>
+          <button className={`button `}>
+            <Email />
+            &nbsp;Email
+          </button>
+        </div>
       </div>
-    </div>
+      <div className={styles.heroImage}>
+        <img
+          src="https://placehold.co/900x600"
+          alt="Yossef Errazik"
+          style={{ borderRadius: "10px" }}
+        />
+      </div>
+    </motion.div>
   );
 }

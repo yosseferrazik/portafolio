@@ -4,23 +4,25 @@ import { Link } from "@/i18n/routing";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import styles from "./Navbar.module.css";
+import { useTranslations } from "next-intl";
 
 import { At, Home, Timeline, User, Work } from "@/components/icons";
 
 const navItems = [
-  { href: "/", label: "Inicio", icon: Home },
-  { href: "/about", label: "Sobre mí", icon: User },
-  { href: "/experience", label: "Experiencia", icon: Timeline },
-  { href: "/projects", label: "Proyectos", icon: Work },
-  { href: "/contact", label: "Contacto", icon: At },
+  { href: "/", key: "home", icon: Home },
+  { href: "/about", key: "about", icon: User },
+  { href: "/experience", key: "experience", icon: Timeline },
+  { href: "/projects", key: "projects", icon: Work },
+  { href: "/contact", key: "contact", icon: At },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("Navigation");
 
   return (
     <nav className={styles.nav}>
-      {navItems.map(({ href, label, icon: Icon }) => {
+      {navItems.map(({ href, key, icon: Icon }) => {
         const active = pathname === href;
 
         return (
@@ -34,7 +36,7 @@ export default function Navbar() {
               <span className={styles.icon}>
                 <Icon />
               </span>
-              <span className={styles.label}>{label}</span>
+              <span className={styles.label}>{t(key)}</span>
             </motion.span>
 
             {active && (

@@ -2,7 +2,14 @@
   "Navigation": {
     "home": "Inicio",
     "about": "Sobre mí",
+    "experience": "Experiencia",
     "projects": "Proyectos",
-    "skills": "Habilidades"
+    "contact": "Contacto"
+  },
+  "Home": {
+    "hero": {
+      "jobStatus": "Disponible para trabajar",
+      "description": "Soy un desarrollador apasionado con experiencia en la creación de aplicaciones web modernas. Me especializo en React, Next.js y Node.js."
+    }
   }
 }

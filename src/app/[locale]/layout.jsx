@@ -2,11 +2,11 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-
 import "./global.css";
 
 import Navbar from "@/components/layout/Navbar/Navbar";
 import LanguageSwitcher from "@/components/intl/LanguageSwitcher/LanguageSwitcher";
+import { AnimatePresence } from "framer-motion";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -29,7 +29,9 @@ export default async function LocaleLayout({ children, params }) {
             <div className={`optionContainer`}>
               <LanguageSwitcher />
             </div>
-            <section className={`content`}>{children}</section>
+            <AnimatePresence>
+              <section className={`content`}>{children}</section>
+            </AnimatePresence>
           </main>
           <Navbar />
         </NextIntlClientProvider>
