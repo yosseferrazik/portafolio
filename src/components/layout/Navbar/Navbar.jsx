@@ -26,12 +26,16 @@ export default function Navbar() {
         const active = pathname === href;
 
         return (
-          <Link key={href} href={href} className={styles.navItem}>
+          <Link
+            key={href}
+            href={href}
+            className={`${styles.navItem} ${active ? styles.active : ""}`}
+          >
             <motion.span
               className={styles.inner}
               whileHover={{ y: -3 }}
-              animate={{ y: active ? -2 : 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              animate={{ y: active ? -3 : 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <span className={styles.icon}>
                 <Icon />
@@ -41,9 +45,12 @@ export default function Navbar() {
 
             {active && (
               <motion.span
-                layoutId="active-indicator"
+                layoutId="navbar-active-indicator"
                 className={styles.indicator}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
               />
             )}
           </Link>

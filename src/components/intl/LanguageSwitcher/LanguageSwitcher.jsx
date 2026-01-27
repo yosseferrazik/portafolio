@@ -2,8 +2,8 @@
 
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import styles from "./LanguageSwitcher.module.css";
 
@@ -20,6 +20,7 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const wrapperRef = useRef(null);
 
   const handleChange = (newLocale) => {
     router.replace(pathname, { locale: newLocale });
@@ -29,13 +30,28 @@ export default function LanguageSwitcher() {
   const currentLang =
     LANGUAGES.find((lang) => lang.code === locale) || LANGUAGES[0];
 
+  // Cerrar al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={wrapperRef}>
       <motion.button
         type="button"
         className={styles.trigger}
-        whileHover={{ y: -3 }}
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.98 }}
         onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-label="Cambiar idioma"
       >
         <currentLang.Icon size={22} />
         <div className={styles.text}>
@@ -44,27 +60,36 @@ export default function LanguageSwitcher() {
         </div>
       </motion.button>
 
-      {open && (
-        <ul className={styles.menu}>
-          {LANGUAGES.map(({ code, short, name, Icon }) => (
-            <li key={code}>
-              <button
-                type="button"
-                className={`${styles.option} ${
-                  locale === code ? styles.active : ""
-                }`}
-                onClick={() => handleChange(code)}
-              >
-                <Icon size={22} />
-                <div className={styles.text}>
-                  <span className={styles.name}>{name}</span>
-                  <span className={styles.short}>{short}</span>
-                </div>
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.ul
+            className={styles.menu}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            {LANGUAGES.map(({ code, short, name, Icon }) => (
+              <li key={code}>
+                <button
+                  type="button"
+                  className={`${styles.option} ${
+                    locale === code ? styles.active : ""
+                  }`}
+                  onClick={() => handleChange(code)}
+                  aria-current={locale === code ? "true" : "false"}
+                >
+                  <Icon size={22} />
+                  <div className={styles.text}>
+                    <span className={styles.name}>{name}</span>
+                    <span className={styles.short}>{short}</span>
+                  </div>
+                </button>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

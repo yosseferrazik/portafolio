@@ -12,3 +12,5 @@ export { default as Mail } from "./svg/Mail";
 export { default as Timeline } from "./svg/Timeline";
 export { default as ReactIcon } from "./svg/React";
 export { default as Cisco } from "./svg/Cisco";
+export { default as Phone } from "./svg/Phone";
+export { default as Pin } from "./svg/Pin";

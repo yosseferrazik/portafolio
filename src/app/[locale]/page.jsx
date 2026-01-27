@@ -11,14 +11,12 @@ const pageVariants = {
   exit: { opacity: 0, x: 50 },
 };
 
-
-
 export default function Home() {
   const t = useTranslations("Home");
 
   return (
     <motion.div
-      className={`${styles.hero}`}
+      className={styles.hero}
       variants={pageVariants}
       initial="initial"
       animate="animate"
@@ -32,16 +30,16 @@ export default function Home() {
         <br />
         <p>{t("hero.description")}</p>
         <br />
-        <div className={`${styles.socialLinks}`}>
-          <button className={`button `}>
+        <div className={styles.socialLinks}>
+          <button className="button">
             <Github />
             &nbsp;GitHub
           </button>
-          <button className={`button `}>
+          <button className="button">
             <Linkedin />
             &nbsp;Linkedin
           </button>
-          <button className={`button `}>
+          <button className="button">
             <Email />
             &nbsp;Email
           </button>

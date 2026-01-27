@@ -1,52 +1,77 @@
 .contact {
   display: flex;
   flex-direction: column;
+  margin-inline: auto;
+  margin-top: 15vh;
+  width: 80vw;
 }
 
-.contact h1 {
+.contactMethods {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-right: auto;
-
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-gray-400);
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
-.contact p {
-  max-width: 540px;
-  line-height: 1.6;
+.contactCard {
+  align-items: center;
+  background-color: var(--color-gray-800);
+  border: 2px solid var(--color-gray-700);
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+  width: 100%;
+}
+
+.contactCard:hover {
+  border-color: var(--color-gray-600);
+}
+
+.contactIcon {
+  color: var(--color-blue-400);
+  flex-shrink: 0;
+}
+
+.contactInfo {
+  flex: 1;
+}
+
+.contactTitle {
+  color: var(--color-gray-300);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.contactDetail {
   color: var(--color-gray-500);
+  font-size: 0.95rem;
+}
+
+.contactButton {
+  margin-top: 3rem;
 }
 
 @media (max-width: 767px) {
   .contact {
     margin-top: 10vh;
-    margin-inline: auto;
     width: 90vw;
   }
 
   .contact h1 {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
     gap: 0.4rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .contact {
-    margin-top: 15vh;
-    margin-inline: auto;
-    width: 80vw;
+    justify-content: flex-start;
   }
 
-  .contact h1 {
-    flex-direction: row;
-  }
-
-  .jobStatus {
-    font-size: 0.875rem;
+  .contactCard {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }

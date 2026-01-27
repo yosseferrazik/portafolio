@@ -1,90 +1,74 @@
 .projects {
   display: flex;
   flex-direction: column;
+  margin-inline: auto;
+  margin-top: 15vh;
+  width: 80vw;
 }
 
-.projects h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-right: auto;
-
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-gray-400);
-}
-
-.projects p {
-  max-width: 540px;
-  line-height: 1.6;
-  color: var(--color-gray-500);
-}
+/* Contenedor principal de proyectos */
 .projectsContainer {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 1.5rem; /* 24px → 1.5rem */
+  margin-top: 1.5rem;
 }
 
+/* Tarjeta individual de proyecto */
 .projectCard {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px;
-  border-radius: 8px;
+  align-items: center;
   background-color: var(--color-gray-800);
   border: 2px solid var(--color-gray-700);
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; /* 16px → 1rem */
 }
 
+/* Etiquetas de tecnologías */
 .tags {
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 0.5rem; /* 8px → 0.5rem */
+  margin-top: 0.5rem;
 }
 
 .tags span {
   background-color: var(--color-gray-700);
-  color: var(--color-gray-300);
-  padding: 4px 8px;
   border-radius: 4px;
-  font-size: 12px;
+  color: var(--color-gray-300);
+  font-size: 0.75rem; /* 12px → 0.75rem */
+  padding: 0.25rem 0.5rem; /* 4px 8px → 0.25rem 0.5rem */
 }
 
+/* Contenedor de enlaces/botones */
 .linkContainer {
-  display: flex;
   align-items: center;
-  gap: 8px;
   color: var(--color-blue-400);
-  font-weight: 600;
   cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  gap: 0.5rem;
 }
+
+/* === RESPONSIVE === */
+
+/* Móvil */
 @media (max-width: 767px) {
   .projects {
     margin-top: 10vh;
-    margin-inline: auto;
     width: 90vw;
   }
 
   .projects h1 {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
     gap: 0.4rem;
+    justify-content: flex-start; /* Cambiado de center a flex-start */
   }
 }
 
+/* Tablet/Desktop - Ya aplicado por defecto, solo ajustes específicos */
 @media (min-width: 768px) {
-  .projects {
-    margin-top: 15vh;
-    margin-inline: auto;
-    width: 80vw;
-  }
-
-  .projects h1 {
-    flex-direction: row;
-  }
-
-  .jobStatus {
-    font-size: 0.875rem;
-  }
+  /* Reglas específicas para desktop si son necesarias */
 }
